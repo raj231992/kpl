@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KPL 2017</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static "css/yellowTheme.css" %}"/>
+
+
+    <!-- Custom Fonts -->
+    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic"
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static "vendor/magnific-popup/magnific-popup.css" %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static "css/AdminLTE.css" %}" rel="stylesheet">
+    <link href="{% static "css/creative.css" %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="{% static "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"%}"></script>
+        <script src="{% static "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"%}"></script>
+    <![endif]-->
+
+
+</head>
+
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" style="color:black;" href="{% url 'home' %}">Kresit Premier League 2017</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+        ">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'register' %}">Register</a>
+            </li>
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'rules' %}">Rules</a>
+            </li>
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'organizers' %}">Organizers</a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<section id="rules">
+    <div class="row">
+        <br>
+        <br>
+        <div class="col-md-10 col-md-offset-1 text-center">
+            <h3><b>Gameplay Rules</b></h3>
+            <br>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 text-center">
+            <table border=0 class="rounded-list">
+                <tr>
+                    <td>
+                        <ol>
+                            <li><p>Each match will be of 8 overs out of which 1 over will be exclusively for Female Player </p></li>
+                            <li><p>Win fetches 2 points </p></li>
+                            <li><p>No balls/wides/any other illegal deliveries to be penalised with 2 runs</p></li>
+                            <li><p>A Free hit will be given for a no-ball </p></li>
+                            <li><p>There is super over in 1-4 overs, which is taken by batting team and in this over each run scored by batsman will be counted as double. Runs for wide and no-ball will remain unchanged</p></li>
+                            <li><p>Maximum 2 bowlers can bowl 2 overs each </p></li>
+                            <li><p> If any batsman scores 30 runs in an inning then he has to retire and can come again for batting after all the batsman of his team </p></li>
+                            <li><p>Batsman can not be retire in super over if he reaches 30 runs </p></li>
+                            <li><p>Opponent team(if present in full strength) will be declared winners if the other team does not assemble in full(7 male + 1 female players) strength within 30 minutes of the given time </p></li>
+                            <li><p>In case of a tie, super over will be played. In case of another tie, scores of the female players will be considered </p></li>
+                            <li><p>Top 4 teams qualify for play-off stage; ties will be resolved using NRR (net run rate) </p></li>
+
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <br>
+        <br>
+        <div class="col-md-10 col-md-offset-1 text-center">
+            <h3><b>Rules for Female Players</b></h3>
+            <br>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 text-center">
+            <table border=0 class="rounded-list">
+                <tr>
+                    <td>
+                        <ol>
+                            <li><p>Only one over (full over) to be bowled and faced; (5th Over) </p></li>
+                            <li><p>Bowling will be from half length of the pitch and using the `throw’ action </p></li>
+                            <li><p>Only 4 Male fielders will be on ground during this over, however boundaries will remain unchanged</p></li>
+                            <li><p>Extras for female players will cost 1 run only (instead of 2 runs) </p></li>
+                            <li><p>Male teammate runs from the other end(full pitch)</p></li>
+                            <li><p>In case the player gets out, team loses 2 runs and the over continues. Incase the match gets over before 5th over, the female player still need to bowl as it may lead to negative runs also</p></li>
+                            <li><p>Female player has to field all through the inning </p></li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <br>
+        <br>
+        <div class="col-md-10 col-md-offset-1 text-center">
+            <h3><b>Franchise and Bidding rules</b></h3>
+            <br>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 text-center">
+            <table border=0 class="rounded-list">
+                <tr>
+                    <td>
+                        <ol>
+                            <li><p>Manager has to register on the webiste and pay 3000 INR to buy a team</p></li>
+                            <li><p>Maximum 8 teams, to be decided on first come basis </p></li>
+                            <li><p>All bidding happens with virtual money (players do not get any money)</p></li>
+                            <li><p>Manager can play by as part of the team. An amount of 75% of highest bidden player in his team will be deducted from the virtual money during the auction (only for male manager)</p></li>
+                            <li><p>NO BIDDING FOR FEMALE PLAYERS</p></li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<section id=" contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">KRESIT Premiur League Season 9!</h2>
+                <hr class="primary">
+                <p>KPL ( KreSIT Premier League) is the annual cricket tournament exclusive for Postgraduate students of
+                    Computer Science and Engineering Department, IITB.</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+                <a href="https://www.facebook.com/kpl.cse.iitb/?fref=ts"><img src="{% static 'img/Facebook-logo.png' %}"
+                                                                              height="100px" width="170px"> </a>
+                <a href="http://www.djangoproject.com/"><img
+                        src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0"
+                        alt="Powered by Django." title="Powered by Django."/></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQuery -->
+<script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" %}"></script>
+<script src="{% static "vendor/scrollreveal/scrollreveal.min.js" %}"></script>
+<script src="{% static "vendor/magnific-popup/jquery.magnific-popup.min.js" %}"></script>
+
+<!-- Theme JavaScript -->
+<script src="{% static "js/creative.js" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1342 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KPL 2017</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static "css/yellowTheme.css" %}"/>
+
+
+    <!-- Custom Fonts -->
+    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic"
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static "vendor/magnific-popup/magnific-popup.css" %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static "css/AdminLTE.css" %}" rel="stylesheet">
+    <link href="{% static "css/creative.css" %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="{% static "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"%}"></script>
+        <script src="{% static "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"%}"></script>
+    <![endif]-->
+
+
+</head>
+
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" style="color:black;" href="{% url 'home' %}">Kresit Premier League 2017</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+        ">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'register' %}">Register</a>
+            </li>
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'rules' %}">Rules</a>
+            </li>
+            <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'organizers' %}">Organizers</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header>
+    <div class="header-content">
+
+    </div>
+</header>
+
+
+<section class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading" style="font-weight: bold">Matches</h2>
+                <hr class="light">
+            </div>
+            <div class="col-lg-12">
+                <!--Widget Inner -->
+                <div class="rca-menu-scroll rca-left-border">
+                    <ul class="rca-season-list">
+                        <li>
+                            <a href="/widgets.html">
+                                T1 vs T2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                T1 vs T3
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/widgets.html">
+                                T3 vs T4
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/widgets.html">
+                                T2 vs T4
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/widgets.html">
+                                T1 vs T4
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/widgets.html">
+                                T2 vs T3
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Widget Inner -->
+            <div class="col-lg-4 col-md-4">
+                <!--Live Season-->
+                <div class="rca-menu-widget rca-left-border">
+                    <a href="/widgets.html" class="rca-padding">
+                        <span class="rca-match-title">T1 vs T2 : </span><span class="rca-match-score">Sat, 4 Mar 0:00 pm IST</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <!--Upcoming Match-->
+                <div class="rca-menu-widget rca-left-border">
+                    <a href="/widgets.html" class="rca-padding">
+                        <span class="rca-match-title">T2 vs T3 : </span><span class="rca-match-score">Sat, 4 Mar 0:00 pm IST</span>
+                    </a>
+                </div>
+            </div>
+
+            <!--Widget Inner -->
+            <div class="col-lg-4 col-md-4">
+                <!--Upcoming Match-->
+                <div class="rca-menu-widget rca-left-border">
+                    <a href="/widgets.html" class="rca-padding">
+                        <span class="rca-match-title">T3 vs T4 : </span><span class="rca-match-score">Sun, 5 Mar 0:00 pm IST</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <!--Match Series-->
+                <div class="rca-medium-widget rca-padding rca-live-season rca-top-border text-center">
+                    <div class="rca-clear"></div>
+                    <div class="rca-padding">
+                        <h3 class="rca-match-title">
+                            <a href="/main.html">
+                                T1: 0/0 in 0.0
+                            </a>
+                        </h3>
+                        <h3 class="rca-match-title">
+                            <a style="color:black;" href="/main.html">
+                                T2: 0/0 in 0.0
+                            </a>
+                        </h3>
+                        {#              <p class="rca-match-info">#}
+                        {#                <span>IND: 16/1 in 1.0</span>#}
+                        {#                <span>CRR:4.1</span>#}
+                        {#                <span>Req RR:10.1</span>#}
+                        {#              </p>#}
+                        <div class="rca-top-padding">
+                            <div class="rca-batsman striker">
+                                <span class="player">*Player 1</span>
+                                <span>0(0)</span>
+                            </div>
+                            <div class="rca-batsman">
+                                <span class="player">Player 2</span>
+                                <span>0(0)</span>
+                            </div>
+                        </div>
+                        <div class="rca-ball-detail">
+                            <div class="rca-match-schedule">
+                                Over: 0
+                            </div>
+                            <ul class="rca-ball-by">
+                                <li class="b6">6</li>
+                                <li class="">1wd</li>
+                                <li class="w">w</li>
+                                <li class="">1</li>
+                                <li class="">2</li>
+                                <li class="b6">4</li>
+                            </ul>
+                            <div class="rca-bowler-info">
+                                <span>Bowler: </span><span class="rca-bolwing">0/0 in 0.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Match Schedule Info-->
+                    <div class="rca-mini-widget rca-history-info">
+                        <div class="rca-row">
+                            <span class="rca-col rca-history-title">Match:</span>
+                            <span class="rca-col"> T1 vs T2 - 1th Qualifying Match</span>
+                        </div>
+                        <div class="rca-row">
+                            <span class="rca-col rca-history-title">Date:</span>
+                            <span class="rca-col"> 1st Mar 2017 00:00 IST</span>
+                        </div>
+                        <div class="rca-row">
+                            <span class="rca-col rca-history-title">Toss:</span>
+                            <span class="rca-col"> T1 won the toss and chose to bat first</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-1 col-md-7 col-md-offset-2">
+                <!--Match Series-->
+                <div class="rca-medium-widget rca-top-border ">
+                    <ul class="rca-tab-list">
+                        <li class="rca-tab-link active" data-tab="tab-41" onclick="showTab(this);">SCORECARD</li>
+                        <li class="rca-tab-link" data-tab="tab-42" onclick="showTab(this);">SQUAD</li>
+                    </ul>
+                    <div id="tab-41" class="rca-tab-content rca-padding active">
+                        <ul class="rca-tab-list small">
+                            <li class="rca-tab-link active" data-tab="tab-401" onclick="showTab(this);">Team X</li>
+                            <li class="rca-tab-link" data-tab="tab-402" onclick="showTab2(this);">Team Y</li>
+                        </ul>
+                        <div id="tab-401" class="rca-tab-content rca-padding active">
+                            <div class="rca-batting-score rca-padding">
+                                <strong><h3>T1 Batting: 0/0 in 0.0</strong></h3>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th style="padding-left:20px;">Batsmen</th>
+                                        <th class="text-center">Runs</th>
+                                        <th class="text-center">4s</th>
+                                        <th class="text-center">6s</th>
+                                        <th class="text-center">SR</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:22px;">Player 1</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:22px;">Player 2</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+
+                                    </tr>
+                                </table>
+                                <div class="rca-clear"></div>
+                                <div class="rca-padding">
+                                    <span>Fours: <strong>0</strong></span>, <span>Sixes: <strong>0</strong></span>,
+                                    <span>Extras: <strong>0</strong></span>
+                                </div>
+                                <div class="rca-bowling-score rca-padding">
+                                    <h3><strong>T2 Bowling:</strong></h3>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th style="padding-left:20px;">Bowler</th>
+                                            <th class="text-center">O</th>
+                                            <th class="text-center">M</th>
+                                            <th class="text-center">R</th>
+                                            <th class="text-center">W</th>
+                                            <th class="text-center">Econ</th>
+                                            <th class="text-center">Extras</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left:22px;">Player 1</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left:22px;">Player 2</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+
+                                        </tr>
+                                    </table>
+                                    <div class="rca-clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-402" style="display:none;" class="rca-tab-content rca-padding active">
+                            <div class="rca-batting-score rca-padding">
+                                <h3><strong>T2 Batting: 0/0 in 0.0</strong></h3>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th style="padding-left:20px;">Batsmen</th>
+                                        <th class="text-center">Runs</th>
+                                        <th class="text-center">4s</th>
+                                        <th class="text-center">6s</th>
+                                        <th class="text-center">SR</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:22px;">Player 1</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:22px;">Player 2</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+                                        <td class="text-center">0</td>
+
+                                    </tr>
+                                </table>
+                                <div class="rca-clear"></div>
+                                <div class="rca-padding">
+                                    <span>Fours: <strong>0</strong></span>, <span>Sixes: <strong>0</strong></span>,
+                                    <span>Extras: <strong>0</strong></span>
+                                </div>
+                                <div class="rca-bowling-score rca-padding">
+                                    <h3><strong>T1 Bowling:</strong></h3>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th style="padding-left:20px;">Bowler</th>
+                                            <th class="text-center">O</th>
+                                            <th class="text-center">M</th>
+                                            <th class="text-center">R</th>
+                                            <th class="text-center">W</th>
+                                            <th class="text-center">Econ</th>
+                                            <th class="text-center">Extras</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left:22px;">Player 1</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left:22px;">Player 2</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">0</td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-42" class="rca-tab-content rca-padding">
+                        <ul class="rca-tab-list small">
+                            <li class="rca-tab-link active" data-tab="tab-411" onclick="showTab(this);">T1
+                            </li>
+                            <li class="rca-tab-link" data-tab="tab-412" onclick="showTab(this);">T2</li>
+                        </ul>
+                        <div id="tab-411" class="rca-tab-content rca-padding active">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 1</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="media/player_pics/pro-pic.jpg"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 2</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 3</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 4</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div id="tab-412" class="rca-tab-content rca-padding active">
+                            <!-- <div class="rca-padding">
+                              <div class="rca-switch filled">
+                                <span class="active">Team X</span><span>Team Y</span>
+                              </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 1</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 2</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 3</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Widget: user widget style 1 -->
+                                    <div class="box box-widget widget-user">
+                                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                                        <div class="widget-user-header bg-aqua-active">
+                                            <h3 class="widget-user-username">Player 4</h3>
+                                            <h5 class="widget-user-desc">Batsman</h5>
+                                        </div>
+                                        <div class="widget-user-image">
+                                            <img class="img-circle" src="{% static "img/user1-128x128.jpg" %}"
+                                                 alt="User Avatar">
+                                        </div>
+                                        <div class="box-footer">
+                                            <div class="row">
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Wck</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4 border-right">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">Runs</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                                <div class="col-xs-4">
+                                                    <div class="description-block">
+                                                        <h5 class="description-header">SR</h5>
+                                                        <span class="description-text">0</span>
+                                                    </div>
+                                                    <!-- /.description-block -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
+                                            <!-- /.row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.widget-user -->
+                                </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="points_table">
+    <div class="container text-center">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading"><strong>KPL 2017-Points Table</strong></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+            <!--Points Table-->
+            <div class="rca-mini-widget rca-top-border rca-stats">
+                <div id="tab-41" class="rca-tab-content rca-padding active">
+                    <div class="rca-bowling-score rca-padding rca-no-border">
+                        <!-- <h3>IPL 2016 - Group A Points Table</h3> -->
+                        <div class="row ">
+                            <div class="rca-header rca-table" style="background-color:#a09f9f;color:white;">
+                                <div class="rca-col small">
+                                    Pos
+                                </div>
+                                <div class="rca-col small">
+                                    T<span class="rca-hide-mobile">eam
+                                </div>
+                                <div class="rca-col small">
+                                    P<span class="rca-hide-mobile">layed</span>
+                                </div>
+                                <div class="rca-col small">
+                                    W<span class="rca-hide-mobile">on</span>
+                                </div>
+                                <div class="rca-col small">
+                                    L<span class="rca-hide-mobile">ost</span>
+                                </div>
+                                <div class="rca-col small">
+                                    Pts
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    Net RR
+                                </div>
+                                <div class="rca-col small">
+                                    Form
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    1
+                                </div>
+                                <div class="rca-col small">
+                                    Team 1
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    2
+                                </div>
+                                <div class="rca-col small">
+                                    Team 2
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    3
+                                </div>
+                                <div class="rca-col small">
+                                    Team 3
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    4
+                                </div>
+                                <div class="rca-col small">
+                                    Team 4
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    5
+                                </div>
+                                <div class="rca-col small">
+                                    Team 5
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="rca-table">
+                                <div class="rca-col small">
+                                    6
+                                </div>
+                                <div class="rca-col small">
+                                    Team 6
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small">
+                                    0
+                                </div>
+                                <div class="rca-col small rca-hide-mobile">
+                                    0
+                                </div>
+
+                                <div class="rca-col small">
+                                    W W W W
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rca-clear"></div>
+    </div>
+        </div>
+</section>
+
+
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="rca-clear"></div>
+        <h2 class="rca-stats-title"><strong>Tournament Stats</strong></h2>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="rca-micro-widget rca-stats">
+                    <div class="rca-match-start">
+                        <h3>Tournament Sixes</h3>
+                        <div class="rca-padding">
+                            <h2>0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="rca-micro-widget rca-stats">
+                    <div class="rca-match-start">
+                        <h3>Tournament Fours</h3>
+                        <div class="rca-padding">
+                            <h2>0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <!--Season Stats-->
+                <div class="rca-mini-widget rca-top-border rca-padding rca-stats">
+                    <div class="rca-clear"></div>
+                    <h2>
+                        <strong>Most Runs</strong>
+                    </h2>
+                    <div class="rca-padding">
+
+                        <div class="rca-match-start">
+                            <h3 class=" top-score">Player 1</h3>
+                            <div class="rca-padding">
+                                <h1><strong>0</strong></h1>
+                                <p class="rca-center">
+                                    0x4 0x6
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rca-row rca-name-tag">
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">2.</span> Player 2
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0x4, 0x6
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">3.</span> Player 3
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0x4, 0x6
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">4.</span> Player 4
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0x4, 0x6
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <!--Season Stats-->
+                <div class="rca-mini-widget rca-top-border rca-padding rca-stats">
+                    <div class="rca-clear"></div>
+                    <h2>
+                        <strong>Most Wickets</strong>
+                    </h2>
+                    <div class="rca-padding">
+
+                        <div class="rca-match-start">
+                            <h3 class="top-bowl">Player 1</h3>
+                            <div class="rca-padding">
+                                <h1><strong>0</strong></h1>
+                                <p class="rca-center">
+                                    0/0
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rca-row rca-name-tag">
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">2.</span> Player 2
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0/0
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">3.</span> Player 3
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0/0
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">4.</span> Player 4
+                                </div>
+                                <div class="rca-col rca-tag-info">
+                                    0/0
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <!--Season Stats-->
+                <div class="rca-mini-widget rca-top-border rca-padding rca-stats">
+                    <div class="rca-clear"></div>
+                    <h2>
+                        <strong>Most Sixes</strong>
+                    </h2>
+                    <div class="rca-padding">
+
+                        <div class="rca-match-start">
+                            <h3 class=" top-six">Player 1</h3>
+                            <div class="rca-padding">
+                                <h1><strong>0</strong></h1>
+                                <p class="rca-center">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rca-row rca-name-tag">
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">2.</span> Player 2
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">3.</span> Player 3
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <!--Season Stats-->
+                <div class="rca-mini-widget rca-top-border rca-padding rca-stats">
+                    <div class="rca-clear"></div>
+                    <h2>
+                        <strong>Most Fours</strong>
+                    </h2>
+                    <div class="rca-padding">
+
+                        <div class="rca-match-start">
+                            <h3 class=" top-six">Player 1</h3>
+                            <div class="rca-padding">
+                                <h1><strong>0</strong></h1>
+                                <p class="rca-center">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rca-row rca-name-tag">
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">2.</span> Player 2
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">3.</span> Player 3
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <!--Season Stats-->
+                <div class="rca-mini-widget rca-top-border rca-padding rca-stats">
+                    <div class="rca-clear"></div>
+                    <h2>
+                        <strong>Most Catches</strong>
+                    </h2>
+                    <div class="rca-padding">
+
+                        <div class="rca-match-start">
+                            <h3 class=" top-six">Player 1</h3>
+                            <div class="rca-padding">
+                                <h1><strong>0</strong></h1>
+                                <p class="rca-center">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rca-row rca-name-tag">
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">2.</span> Player 2
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                            <div class="rca-table">
+                                <div class="rca-col rca-name-info">
+                                    <span class="rca-tag-info">3.</span> Player 3
+                                </div>
+                                <div class="rca-col rca-tag-info">
+
+                                </div>
+                                <div class="rca-col rca-name-score">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<section id=" contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">KRESIT Premiur League Season 9!</h2>
+                <hr class="primary">
+                <p>KPL ( KreSIT Premier League) is the annual cricket tournament exclusive for Postgraduate students of Computer Science and Engineering Department, IITB.</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+                <a href="https://www.facebook.com/kpl.cse.iitb/?fref=ts"><img src="{% static 'img/Facebook-logo.png' %}" height="100px" width="170px"> </a>
+                <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQuery -->
+<script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" %}"></script>
+<script src="{% static "vendor/scrollreveal/scrollreveal.min.js" %}"></script>
+<script src="{% static "vendor/magnific-popup/jquery.magnific-popup.min.js" %}"></script>
+
+<!-- Theme JavaScript -->
+<script src="{% static "js/creative.js" %}"></script>
+<script>
+    function showTab(event) {
+        var sourceParent = event.parentElement.parentElement;
+        var sourceChilds = sourceParent.getElementsByClassName("rca-tab-content");
+        var sourceLinkParent = sourceParent.getElementsByClassName("rca-tab-link");
+        for (var i = 0; i < sourceChilds.length; i++) {
+            sourceChilds.item(i).classList.remove("active");
+        }
+        for (var i = 0; i < sourceLinkParent.length; i++) {
+            sourceLinkParent.item(i).classList.remove("active");
+        }
+        var dataTab = event.getAttribute("data-tab");
+
+        event.classList.add("active");
+        document.getElementById(dataTab).className += ' active';
+    }
+    function showTab2(event) {
+        var sourceParent = event.parentElement.parentElement;
+        var sourceChilds = sourceParent.getElementsByClassName("rca-tab-content");
+        var sourceLinkParent = sourceParent.getElementsByClassName("rca-tab-link");
+        for (var i = 0; i < sourceChilds.length; i++) {
+            sourceChilds.item(i).classList.remove("active");
+        }
+        for (var i = 0; i < sourceLinkParent.length; i++) {
+            sourceLinkParent.item(i).classList.remove("active");
+        }
+        var dataTab = event.getAttribute("data-tab");
+
+        event.classList.add("active");
+        document.getElementById(dataTab).className += ' active';
+        document.getElementById(dataTab).style = 'display:initail;';
+    }
+
+</script>
+
+</body>
+
+</html>
