@@ -1,0 +1,48 @@
+{%  extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="register">
+    <div class="container">
+    <div class="row">
+
+        <br>
+        <br>
+    <h2 class="text-center">Registered Players</h2>
+    <br>
+        {% for player in players %}
+        <div class="col-md-4 col-sm-6">
+
+          <!-- Profile Image -->
+          <div class="box box-primary">
+            <div class="box-body box-profile text-center">
+              <img class="profile-user-img img-responsive" src="{{ MEDIA_URL }}{{ player.pic.url }}" alt="User profile picture">
+              <h3 class="profile-username text-center">{{ player.name | title}}</h3>
+              <p class="text-muted text-center">{{ player.category }}</p>
+              <strong>Previous Cricketing Experience</strong>
+              <p class="text-muted">
+                  {% if player.prev_exp %}
+                {{ player.prev_exp }}
+                  {% endif %}
+              {% if not player.prev_exp %}
+                  Not Specified
+              {% endif %}
+              </p>
+              <strong>Previous KPL Experience</strong>
+              <p class="text-muted">{% if player.prev_exp %}
+                {{ player.kpl_exp }}
+                  {% endif %}
+              {% if not player.kpl_exp %}
+                  Not Specified
+              {% endif %}</p>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        {% endfor %}
+
+</section>
+
+{% endblock %}

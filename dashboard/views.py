@@ -1,6 +1,7 @@
 from django.shortcuts import render,reverse
 from django.views import View
 from players.forms import PlayerForm
+from players.models import Player
 from django.http import HttpResponseRedirect
 # Create your views here.
 class Home(View):
@@ -10,6 +11,11 @@ class Home(View):
 class Rules(View):
     def get(self,request):
         return render(request,"rules.html",{})
+
+class Players(View):
+    def get(self,request):
+        players = Player.objects.all()
+        return render(request,"players.html",{'players':players})
 
 class Register(View):
     def get(self,request):

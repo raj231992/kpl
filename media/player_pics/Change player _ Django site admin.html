@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://127.0.0.1:8000/admin/players/player/1/change/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Change player | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="./Change player _ Django site admin_files/base.css">
+<link rel="stylesheet" type="text/css" href="./Change player _ Django site admin_files/forms.css">
+
+
+<script type="text/javascript" src="./Change player _ Django site admin_files/saved_resource"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/core.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/jquery.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/jquery.init.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/actions.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/urlify.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/prepopulate.js"></script>
+<script type="text/javascript" src="./Change player _ Django site admin_files/xregexp.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-players model-player change-form" data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="http://127.0.0.1:8000/admin/">Django administration</a></h1>
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>raj</strong>.
+            
+            
+                
+                    <a href="http://127.0.0.1:8000/">View site</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="http://127.0.0.1:8000/admin/password_change/">Change password</a> /
+                
+                <a href="http://127.0.0.1:8000/admin/logout/">Log out</a>
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="http://127.0.0.1:8000/admin/">Home</a>
+› <a href="http://127.0.0.1:8000/admin/players/">Players</a>
+› <a href="http://127.0.0.1:8000/admin/players/player/">Players</a>
+› Raj
+</div>
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Change player</h1>
+        <div id="content-main">
+
+
+  <ul class="object-tools">
+    
+    <li>
+        
+        <a href="http://127.0.0.1:8000/admin/players/player/1/history/" class="historylink">History</a>
+    </li>
+    
+    
+  </ul>
+
+
+<form enctype="multipart/form-data" action="http://127.0.0.1:8000/admin/players/player/1/change/" method="post" id="player_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="IVlSzYLWDE9zjHwkh6u9c4WjGG1ePGwHXYs3JJgvZVjtd3xkWzMJAAQnY2L852Cy">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-name">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_name">Name:</label>
+                        
+                            <input class="vTextField" id="id_name" maxlength="100" name="name" type="text" value="Raj" required="">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-manager">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_manager">Manager:</label>
+                        
+                            <select id="id_manager" name="manager" required="">
+<option value="">---------</option>
+<option value="Yes">Yes</option>
+<option value="No" selected="selected">No</option>
+</select>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-year">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_year">Year:</label>
+                        
+                            <select id="id_year" name="year" required="">
+<option value="">---------</option>
+<option value="First">First</option>
+<option value="Second" selected="selected">Second</option>
+<option value="Third">Third</option>
+</select>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-pic">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_pic">Pic:</label>
+                        
+                            <p class="file-upload">Currently: <a href="http://127.0.0.1:8000/media/player_pics/raj_z2OjI0J.jpg">player_pics/raj_z2OjI0J.jpg</a> <br>Change: <input id="id_pic" name="pic" type="file"></p>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-phone_no">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_phone_no">Phone no:</label>
+                        
+                            <input class="vTextField" id="id_phone_no" maxlength="10" name="phone_no" type="text" value="8142533445" required="">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-category">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_category">Category:</label>
+                        
+                            <select id="id_category" name="category" required="">
+<option value="">---------</option>
+<option value="Batsman">Batsman</option>
+<option value="Bowler">Bowler</option>
+<option value="All-Rounder" selected="selected">All-Rounder</option>
+</select>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-prev_exp">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_prev_exp">Prev exp:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_prev_exp" name="prev_exp" rows="10">Played at High School and College level</textarea>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-kpl_exp">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_kpl_exp">Kpl exp:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_kpl_exp" name="kpl_exp" rows="10">Managed and Captained M.Tech Dragons(Runner Up) KPL 2016</textarea>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-pool">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_pool">Pool:</label>
+                        
+                            <select id="id_pool" name="pool" required="">
+<option value="A">A</option>
+<option value="B" selected="selected">B</option>
+</select>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+
+    
+    <p class="deletelink-box"><a href="http://127.0.0.1:8000/admin/players/player/1/delete/" class="deletelink">Delete</a></p>
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+</div>
+
+
+
+    <script type="text/javascript" id="django-admin-form-add-constants" src="./Change player _ Django site admin_files/change_form.js">
+    </script>
+
+
+
+
+<script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="./Change player _ Django site admin_files/prepopulate_init.js" data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>
