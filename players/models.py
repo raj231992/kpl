@@ -24,7 +24,12 @@ class Player(models.Model):
         ('Yes', 'Yes'),
         ('No', 'No'),
     )
+    gender_opts = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+    )
     name = models.CharField(max_length=100, unique=True)
+    gender = models.CharField(choices=gender_opts,default='Male',max_length=6)
     manager = models.CharField(choices=manager_opts,max_length=3)
     year = models.CharField(max_length=10,choices=year_opts)
     pic = models.ImageField(upload_to='player_pics/')
