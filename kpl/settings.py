@@ -25,7 +25,7 @@ SECRET_KEY = 'i9825%w(v(q^lqw594*ig(x8r7uxmv^ycc39-w2n#%oax$@@d5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.14.11.2','127.0.0.1']
+ALLOWED_HOSTS = ['10.14.11.2','127.0.0.1', '10.129.3.38','ntp.cse.iitb.ac.in','www.cse.iitb.ac.in']
 
 
 # Application definition
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -120,13 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/kpl/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/kpl/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

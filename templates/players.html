@@ -30,7 +30,8 @@
               {% endif %}
               </p>
               <strong>Previous KPL Experience</strong>
-              <p class="text-muted">{% if player.prev_exp %}
+              <p class="text-muted">
+		{% if player.kpl_exp %}
                 {{ player.kpl_exp }}
                   {% endif %}
               {% if not player.kpl_exp %}
