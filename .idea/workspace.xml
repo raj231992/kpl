@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb5e50df-bb8e-4637-bd4d-e100b43f81a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpl/settings.py" afterPath="$PROJECT_DIR$/kpl/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kpl/urls.py" afterPath="$PROJECT_DIR$/kpl/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/players/models.py" afterPath="$PROJECT_DIR$/players/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/yellowTheme.css" afterPath="$PROJECT_DIR$/static/css/yellowTheme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/admin.py" afterPath="$PROJECT_DIR$/teams/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/auctions/models.py" afterPath="$PROJECT_DIR$/auctions/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teams/models.py" afterPath="$PROJECT_DIR$/teams/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/organizers.html" afterPath="$PROJECT_DIR$/templates/organizers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/players.html" afterPath="$PROJECT_DIR$/templates/players.html" />
     </list>
     <ignored path="kpl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auction.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="auction.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/auction.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -70,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teams/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -140,16 +132,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yellowTheme.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/yellowTheme.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="1307" column="0" selection-start-line="1307" selection-start-column="0" selection-end-line="1307" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -182,10 +164,8 @@
         <option value="$PROJECT_DIR$/templates/organizers.html" />
         <option value="$PROJECT_DIR$/templates/players.html" />
         <option value="$PROJECT_DIR$/teams/admin.py" />
-        <option value="$PROJECT_DIR$/teams/models.py" />
         <option value="$PROJECT_DIR$/players/models.py" />
         <option value="$PROJECT_DIR$/kpl/settings.py" />
-        <option value="$PROJECT_DIR$/auctions/models.py" />
         <option value="$PROJECT_DIR$/auctions/admin.py" />
         <option value="$PROJECT_DIR$/teams/serializers.py" />
         <option value="$PROJECT_DIR$/auctions/serializers.py" />
@@ -193,6 +173,8 @@
         <option value="$PROJECT_DIR$/auctions/urls.py" />
         <option value="$PROJECT_DIR$/auctions/views.py" />
         <option value="$PROJECT_DIR$/templates/auction.html" />
+        <option value="$PROJECT_DIR$/auctions/models.py" />
+        <option value="$PROJECT_DIR$/teams/models.py" />
       </list>
     </option>
   </component>
@@ -231,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,6 +350,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -670,7 +652,7 @@
     <frame x="0" y="0" width="1680" height="1025" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30269608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30637255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -778,14 +760,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/yellowTheme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19590">
-          <caret line="1306" column="1" selection-start-line="1306" selection-start-column="1" selection-end-line="1306" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/yellowTheme.css" />
     <entry file="file://$PROJECT_DIR$/players/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -952,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23370">
           <caret line="1558" column="7" selection-start-line="1558" selection-start-column="7" selection-end-line="1558" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,9 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1048,24 +1019,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/players/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/yellowTheme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="1307" column="0" selection-start-line="1307" selection-start-column="0" selection-end-line="1307" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/yellowTheme.css" />
     <entry file="file://$PROJECT_DIR$/teams/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1076,30 +1030,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teams/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auctions/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auctions/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1128,6 +1064,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auctions/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/players/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teams/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>

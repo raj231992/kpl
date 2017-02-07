@@ -14,7 +14,7 @@ class Current_Player(models.Model):
 class Sold_Player(models.Model):
     player = models.ForeignKey(Player,on_delete=models.CASCADE)
     team = models.ForeignKey(Team,on_delete=models.CASCADE)
-    price = models.CharField(max_length=4)
+    price = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.player)
