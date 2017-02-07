@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'dashboard',
     'players',
     'teams',
+    'auctions',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -131,4 +133,6 @@ MEDIA_URL = '/kpl/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+SERVER_ADDRESS='127.0.0.1:8000'
 

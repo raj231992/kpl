@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "vendor/slimScroll/jquery.slimscroll.min.js" %}"></script>
+    <script>
+        $(document).ready(function () {
+            load_team_money();
+            load_current_player();
+            load_unsold_player();
+            load_sold_player();
+            load_top_players();
+        });
+        var current_toggle = '9999';
+        var unsold_toggle = '9999';
+        var sold_toggle = '9999';
+        var team_money_toggle = '9999';
+        var top_players_toggle = '9999';
+
+        function load_team_money() {
+            var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
+            $.getJSON(link, function (result) {
+                $.each(result, function (i, field) {
+                    if (team_money_toggle != field.refresh) {
+                        team_money_toggle = field.refresh
+                        $("#team_money").html("")
+                        var link = 'http://{{ request.get_host }}/kpl/auction/team_money/';
+                        $.getJSON(link, function (result) {
+                            $.each(result, function (i, field) {
+                                var idx = parseInt(i) + 1
+                                $("#team_money").append("<tr><td class='col-xs-2 text-center'>" + idx + "</td><td class='col-xs-8 text-center'>" + field.name + "</td><td class='col-xs-2 text-center'>" + field.money + "</td></tr>");
+
+                            });
+                        });
+                    }
+                });
+            });
+            setTimeout(load_unsold_player, 5000)
+        }
+        function load_current_player() {
+            var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
+            $.getJSON(link, function (result) {
+                $.each(result, function (i, field) {
+                    if (current_toggle != field.refresh) {
+                        current_toggle = field.refresh
+                        var link = 'http://{{ request.get_host }}/kpl/auction/current_player/';
+                        $.getJSON(link, function (result) {
+                            $.each(result, function (i, field) {
+                                $("#name").html(field.name);
+                                $("#category").html(field.category);
+                                $("#prev_exp").html(field.prev_exp);
+                                $("#kpl_exp").html(field.kpl_exp);
+                                $("#pic").attr("src", "{{ MEDIA_URL  }}" + field.pic);
+                            });
+                        });
+                    }
+                });
+            });
+
+            setTimeout(load_current_player, 5000)
+        }
+
+        function load_top_players() {
+            var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
+            $.getJSON(link, function (result) {
+                $.each(result, function (i, field) {
+                    if (top_players_toggle != field.refresh) {
+                        top_players_toggle = field.refresh
+                        $("#top_players").html("")
+                        var link = 'http://{{ request.get_host }}/kpl/auction/top_sold_players/';
+                        $.getJSON(link, function (result) {
+                            $.each(result, function (i, field) {
+                                var idx = parseInt(i) + 1
+                                $("#top_players").append("<tr><td class='col-xs-2 text-center'>" + idx + "</td><td class='col-xs-8 text-center'>" + field.player_details.name + "</td><td class='col-xs-2 text-center'>" + field.price + "</td></tr>");
+
+                            });
+                        });
+                    }
+                });
+            });
+            setTimeout(load_unsold_player, 5000)
+        }
+
+        function load_unsold_player() {
+            var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
+            $.getJSON(link, function (result) {
+                $.each(result, function (i, field) {
+                    if (unsold_toggle != field.refresh) {
+                        unsold_toggle = field.refresh
+                        $("#unsold").html("")
+                        var link = 'http://{{ request.get_host }}/kpl/auction/unsold_players/';
+                        $.getJSON(link, function (result) {
+                            $.each(result, function (i, field) {
+                                var idx = parseInt(i) + 1
+                                $("#unsold").append("<tr><td class='col-xs-2'>" + idx + "</td><td class='col-xs-6 text-center'>" + field.name + "</td><td class='col-xs-4 text-center'>" + field.category + "</td></tr>");
+
+                            });
+                        });
+                    }
+                });
+            });
+            setTimeout(load_unsold_player, 5000)
+        }
+        function load_sold_player() {
+            var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
+            $.getJSON(link, function (result) {
+                $.each(result, function (i, field) {
+                    if (sold_toggle != field.refresh) {
+                        sold_toggle = field.refresh
+                        $("#sold").html("")
+                        var link = 'http://{{ request.get_host }}/kpl/auction/sold_players/';
+                        $.getJSON(link, function (result) {
+                            $.each(result, function (i, field) {
+                                var idx = parseInt(i) + 1
+                                $("#sold").append("<tr><td class='col-xs-6 text-center'>" + field.player_details.name + "</td><td class='col-xs-4 text-center'>" + field.team_details.name + "</td><td class='col-xs-2 text-center'>" + field.price + "</td></tr>");
+
+                            });
+                        });
+                    }
+                });
+            });
+            setTimeout(load_sold_player, 5000)
+        }
+    </script>
+    <section id="organizers">
+        <div class="container">
+            <div class="row">
+                <br>
+                <br>
+                <div class="col-md-4 ">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">
+                            <h4 class="text-center">
+                                <b>Team Balance</b>
+                            </h4>
+                        </div>
+                        <table class="table table-fixed">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-2 text-center ">#</th>
+                                <th class="col-xs-8 text-center">Team</th>
+                                <th class="col-xs-2 text-center">Money</th>
+                            </tr>
+                            </thead>
+                            <tbody id="team_money">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <!-- Profile Image -->
+                    <h2 class="text-center"><b>Current Player</b></h2>
+                    <div class="box box-primary">
+
+                        <div class="box-body box-profile text-center">
+                            <img id="pic" class="profile-user-img img-responsive" src="" alt="User profile picture">
+                            <h3 id="name" class="profile-username text-center"></h3>
+                            <p id="category" class="text-muted text-center"></p>
+                            <strong>Previous Cricketing Experience</strong>
+                            <p id="prev_exp" class="text-muted"></p>
+                            <strong>Previous KPL Experience</strong>
+                            <p id="kpl_exp" class="text-muted"></p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    </div>
+                    <div class="col-md-4 ">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">
+                            <h4 class="text-center">
+                                <b>Top Players</b>
+                            </h4>
+                        </div>
+                        <table class="table table-fixed">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-2 text-center ">#</th>
+                                <th class="col-xs-8 text-center">Name</th>
+                                <th class="col-xs-2 text-center">Price</th>
+                            </tr>
+                            </thead>
+                            <tbody id="top_players">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                        </div>
+                </div>
+                    <!-- /.box -->
+                <div class="row">
+                    <div class="col-lg-5 ">
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <h4 class="text-center">
+                                    <b>Unsold Players</b>
+                                </h4>
+                            </div>
+                            <table class="table table-fixed">
+                                <thead>
+                                <tr>
+                                    <th class="col-xs-2 ">#</th>
+                                    <th class="col-xs-6 text-center">Name</th>
+                                    <th class="col-xs-4 text-center">Category</th>
+                                </tr>
+                                </thead>
+                                <tbody id="unsold">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 ">
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <h4 class="text-center">
+                                    <b>Sold Players</b>
+                                </h4>
+                            </div>
+                            <table class="table table-fixed">
+                                <thead>
+                                <tr>
+                                    <th class="col-xs-6 text-center">Name</th>
+                                    <th class="col-xs-4 text-center">Team</th>
+                                    <th class="col-xs-2 text-center">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody id="sold">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

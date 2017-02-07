@@ -19,13 +19,6 @@ class Team(models.Model):
     def __str__(self):
         return str(self.name)
 
-class Member(models.Model):
-    team = models.ForeignKey(Team,on_delete=models.CASCADE)
-    player = models.ForeignKey(Player,on_delete=models.CASCADE)
-    price = models.CharField(max_length=4,default='0')
-
-    def __str__(self):
-        return str(self.player)
 
 
 
