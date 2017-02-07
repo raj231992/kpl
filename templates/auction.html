@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block content %}
@@ -39,7 +40,7 @@
                     }
                 });
             });
-            setTimeout(load_unsold_player, 5000)
+            setTimeout(load_unsold_player, 1000)
         }
         function load_current_player() {
             var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
@@ -61,7 +62,7 @@
                 });
             });
 
-            setTimeout(load_current_player, 5000)
+            setTimeout(load_current_player, 1000)
         }
 
         function load_top_players() {
@@ -103,7 +104,7 @@
                     }
                 });
             });
-            setTimeout(load_unsold_player, 5000)
+            setTimeout(load_unsold_player, 1000)
         }
         function load_sold_player() {
             var link = 'http://{{ request.get_host }}/kpl/auction/refresh_players/';
@@ -123,11 +124,12 @@
                     }
                 });
             });
-            setTimeout(load_sold_player, 5000)
+            setTimeout(load_sold_player, 1000)
         }
     </script>
     <section id="organizers">
         <div class="container">
+
             <div class="row">
                 <br>
                 <br>
@@ -199,9 +201,31 @@
                     </div>
                         </div>
                 </div>
+            {% ifequal request.user admin %}
+            <div class="row">
+
+                <div class="col-md-6 col-md-offset-3">
+                        <form id="player_form" method="post" action="">{% csrf_token %}
+                            {{ player_form|crispy }}
+                            <div class="col-xs-offset-4 col-xs-2">
+                                <a href="javascript:{}" class="btn-primary btn-lg" onclick="document.getElementById('player_form').submit();">Sell</a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="/kpl/auction/skip_player/" class="btn-primary btn-lg">Skip</a>
+                            </div>
+                            <br>
+                    <br>
+                        </form>
+
+
+                </div>
+            </div>
+            {% endifequal %}
                     <!-- /.box -->
                 <div class="row">
                     <div class="col-lg-5 ">
+                        <br>
+                        <br>
                         <div class="panel panel-default ">
                             <div class="panel-heading">
                                 <h4 class="text-center">
@@ -224,6 +248,8 @@
                         </div>
                     </div>
                     <div class="col-lg-7 ">
+                        <br>
+                        <br>
                         <div class="panel panel-default ">
                             <div class="panel-heading">
                                 <h4 class="text-center">

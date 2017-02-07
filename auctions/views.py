@@ -1,17 +1,61 @@
 from django.shortcuts import render
 from django.views import View
+from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from players.models import Player
 from teams.models import Team
 from .serializers import Current_Player_Serializer,Unsold_Player_Serializer,Refresh_Data_Serializer,Sold_Player_Serializer,Team_Serializer
 from .models import Current_Player,Refresh_Data,Sold_Player
+from .forms import Player_Auction_Form
+from django.http import HttpResponseRedirect
 import random
 # Create your views here.
 
 class Auction(View):
     def get(self,request):
-        return render(request,"auction.html",{})
+        player_form = Player_Auction_Form()
+        admin = User.objects.get(username='raj')
+        context={
+            'player_form':player_form,
+            'admin':admin
+        }
+        return render(request,"auction.html",context)
+class Start_Auction(View):
+    def get(self,request):
+        players = Player.objects.filter(auction_status='pending',pool='A').exclude(gender='Female')
+        tot = len(players)
+        player = players[random.randint(0,tot-1)]
+        current_player = Current_Player(current_player=player)
+        current_player.save()
+        refresh = Refresh_Data.objects.get(id=1)
+        if refresh.refresh == '0':
+            refresh.refresh = '1'
+        else:
+            refresh.refresh = '0'
+        refresh.save()
+        return HttpResponseRedirect('/kpl/auction/')
+class Skip_Player(View):
+    def get(self, request):
+        players = Player.objects.filter(auction_status='pending', pool='A').exclude(gender='Female')
+        tot = len(players)
+        if tot>0:
+            player = players[random.randint(0, tot - 1)]
+        else:
+            players = Player.objects.filter(auction_status='pending', pool='B').exclude(gender='Female')
+            tot = len(players)
+            player = players[random.randint(0, tot - 1)]
+        current_player = Current_Player.objects.all()
+        current_player[0].delete()
+        cur_player = Current_Player(current_player=player)
+        cur_player.save()
+        refresh = Refresh_Data.objects.get(id=1)
+        if refresh.refresh == '0':
+            refresh.refresh = '1'
+        else:
+            refresh.refresh = '0'
+        refresh.save()
+        return HttpResponseRedirect('/kpl/auction/')
 class Current_Player_Data(APIView):
     def get(self,request):
         player = Current_Player.objects.all()[0]
