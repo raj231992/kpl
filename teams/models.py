@@ -15,6 +15,8 @@ class Team(models.Model):
     captain = models.ForeignKey(Player,on_delete=models.CASCADE,related_name='captain')
     logo = models.ImageField(upload_to='team_logo/')
     manager_only = models.CharField(choices=manager_only_opts,max_length=3,default='No')
+    players_cost = models.IntegerField(default=0)
+    manager_cost = models.IntegerField(default=0)
     money = models.IntegerField(default=3000)
     def __str__(self):
         return str(self.name)

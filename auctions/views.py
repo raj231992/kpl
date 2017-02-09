@@ -23,26 +23,39 @@ class Auction(View):
         return render(request,"auction.html",context)
 class Start_Auction(View):
     def get(self,request):
-        players = Player.objects.filter(auction_status='pending',pool='A').exclude(gender='Female')
-        tot = len(players)
-        player = players[random.randint(0,tot-1)]
-        current_player = Current_Player(current_player=player)
-        current_player.save()
-        refresh = Refresh_Data.objects.get(id=1)
-        if refresh.refresh == '0':
-            refresh.refresh = '1'
-        else:
-            refresh.refresh = '0'
-        refresh.save()
+        if request.user.username =='raj':
+            players = Player.objects.all()
+            for player in players:
+                player.auction_status = 'pending'
+                player.save()
+            teams = Team.objects.all()
+            for team in teams:
+                team.players_cost = 0
+                team.manager_cost = 0
+                team.money = 3000
+                team.save()
+            players = Player.objects.filter(auction_status='pending',pool='A').exclude(gender='Female').exclude(manager='Yes')
+            tot = len(players)
+            player = players[random.randint(0,tot-1)]
+            Sold_Player.objects.all().delete()
+            Current_Player.objects.all().delete()
+            current_player = Current_Player(current_player=player)
+            current_player.save()
+            refresh = Refresh_Data.objects.get(id=1)
+            if refresh.refresh == '0':
+                refresh.refresh = '1'
+            else:
+                refresh.refresh = '0'
+            refresh.save()
         return HttpResponseRedirect('/kpl/auction/')
 class Skip_Player(View):
     def get(self, request):
-        players = Player.objects.filter(auction_status='pending', pool='A').exclude(gender='Female')
+        players = Player.objects.filter(auction_status='pending', pool='A').exclude(gender='Female').exclude(manager='Yes')
         tot = len(players)
         if tot>0:
             player = players[random.randint(0, tot - 1)]
         else:
-            players = Player.objects.filter(auction_status='pending', pool='B').exclude(gender='Female')
+            players = Player.objects.filter(auction_status='pending', pool='B').exclude(gender='Female').exclude(manager='Yes')
             tot = len(players)
             player = players[random.randint(0, tot - 1)]
         current_player = Current_Player.objects.all()
@@ -56,6 +69,39 @@ class Skip_Player(View):
             refresh.refresh = '0'
         refresh.save()
         return HttpResponseRedirect('/kpl/auction/')
+class Sell_Player(View):
+    def post(self,request):
+        player = Current_Player.objects.all()[0]
+        team = Team.objects.get(id=request.POST['team'])
+        price = int(request.POST['price'])
+        sold_player = Sold_Player(player=player.current_player,team=team,price=price)
+        sold_player.save()
+        player.current_player.auction_status = 'sold'
+        player.current_player.save()
+        team.players_cost+=price
+        costliest_player = Sold_Player.objects.filter(team=team).order_by('-price')[0]
+        if team.manager_only=='No':
+            team.manager_cost = 0.75*costliest_player.price
+        team.money = 3000-(team.players_cost+team.manager_cost)
+        team.save()
+        refresh = Refresh_Data.objects.get(id=1)
+        players = Player.objects.filter(auction_status='pending', pool='A').exclude(gender='Female').exclude(manager='Yes')
+        tot = len(players)
+        if tot > 0:
+            player = players[random.randint(0, tot - 1)]
+        else:
+            players = Player.objects.filter(auction_status='pending', pool='B').exclude(gender='Female').exclude(manager='Yes')
+            tot = len(players)
+            player = players[random.randint(0, tot - 1)]
+        Current_Player.objects.all().delete()
+        cur_player = Current_Player(current_player=player)
+        cur_player.save()
+        if refresh.refresh == '0':
+            refresh.refresh = '1'
+        else:
+            refresh.refresh = '0'
+        refresh.save()
+        return HttpResponseRedirect('/kpl/auction/')
 class Current_Player_Data(APIView):
     def get(self,request):
         player = Current_Player.objects.all()[0]
@@ -63,7 +109,7 @@ class Current_Player_Data(APIView):
         return Response({'current_player':player_obj.data},status=200)
 class Unsold_Player_Data(APIView):
     def get(self,request):
-        players = Player.objects.filter(auction_status='pending').exclude(gender='Female').order_by('pool','name')
+        players = Player.objects.filter(auction_status='pending').exclude(gender='Female').exclude(manager='Yes').order_by('pool','name')
         player_obj = Unsold_Player_Serializer(players,many=True)
         return Response(data=player_obj.data,status=200)
 class Sold_Player_Data(APIView):
@@ -84,7 +130,7 @@ class Refresh_Player_Data(APIView):
 
 class Team_Money(APIView):
     def get(self,request):
-        teams = Team.objects.all().order_by('money','name')
+        teams = Team.objects.all().order_by('-money','name')
         team_obj = Team_Serializer(teams,many=True)
         return Response(data=team_obj.data, status=200)
 
