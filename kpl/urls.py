@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^kpl/admin/', admin.site.urls),
     url(r'^kpl/', include('dashboard.urls')),
     url(r'^kpl/auction/', include('auctions.urls')),
+    url(r'^kpl/teams/', include('teams.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

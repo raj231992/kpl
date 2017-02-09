@@ -15,15 +15,18 @@
         </div>
         <br>
         <div class="row">
+            {% for team in teams %}
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="{{ MEDIA_URL }}/kpl/media/player_pics/raj.jpg" width="170" height="170" class="img-responsive img-circle" alt="">
-                    <h3><b>Raj</b></h3>
-                    <p class="text-muted"><b>Organizer <br>& <br>Web Designer</b></p>
-                    <p class="text-center text-muted" style="font-family: Arial;"><b>Phone:8142533445</b></p>
+                    <img src="{{ MEDIA_URL }}{{ team.logo.url }}" style="width:150px;height:150px;" class="img-responsive img-circle" alt="">
+                    <h3><b>{{ team.name }}</b></h3>
+                    <p class="text-muted"><b>Manager</b></p>
+                    <p class="text-center text-muted" style="font-family: Arial;"><b>{{ team.manager.name }}</b></p>
+                    <p class="text-center text-muted" style="font-family: Arial;"><b>Phone:{{ team.manager.phone_no }}</b></p>
 
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 
