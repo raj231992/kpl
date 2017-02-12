@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <section id=organizers" style="background-color: white; ">
+        <div class="container">
+            <div class="row">
+                <br>
+                <br>
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><b>{{ team.name }}</b></h2>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <!-- Widget: user widget style 1 -->
+                    <div class="box1 box-widget widget-user">
+                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                        <div class="widget-user-header bg-aqua-active">
+                            <h3 class="widget-user-username">{{ manager.name }}</h3>
+                            <h5 class="widget-user-desc">{{ manager.category }}</h5>
+                        </div>
+                        <div class="widget-user-image">
+                            <img class="img-circle" style="width:90px;height:90px "
+                                 src="{{ MEDIA_URL }}{{ manager.pic.url }}"
+                                 alt="User Avatar">
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-xs-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">Wck</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-xs-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">Runs</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-xs-4">
+                                    <div class="description-block">
+                                        <h5 class="description-header">SR</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                </div>
+                {% for player in players %}
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                    <!-- Widget: user widget style 1 -->
+                    <div class="box1 box-widget widget-user">
+                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                        <div class="widget-user-header bg-aqua-active">
+                            <h3 class="widget-user-username">{{ player.player.name }}</h3>
+                            <h5 class="widget-user-desc">{{ player.player.category }}</h5>
+                        </div>
+                        <div class="widget-user-image">
+                            <img class="img-circle" src="{{ MEDIA_URL }}{{ player.player.pic.url }}"
+                                 alt="User Avatar" style="width:90px;height:90px ">
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-xs-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">Wck</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-xs-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">Runs</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-xs-4">
+                                    <div class="description-block">
+                                        <h5 class="description-header">SR</h5>
+                                        <span class="description-text">0</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+                <!-- /.widget-user -->
+                </div>
+            </div>
+
+
+    </section>
+
+
+{% endblock %}

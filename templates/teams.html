@@ -18,8 +18,8 @@
             {% for team in teams %}
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="{{ MEDIA_URL }}{{ team.logo.url }}" style="width:150px;height:150px;" class="img-responsive img-circle" alt="">
-                    <h3><b>{{ team.name }}</b></h3>
+                    <img src="{{ MEDIA_URL }}{{ team.logo.url }}" style="width:250px;height: 250px;" class="img-responsive img-circle" alt="">
+                    <h3><a href="{% url 'teams:players' team.id %}"><b>{{ team.name }}</b></a></h3>
                     <p class="text-muted"><b>Manager</b></p>
                     <p class="text-center text-muted" style="font-family: Arial;"><b>{{ team.manager.name }}</b></p>
                     <p class="text-center text-muted" style="font-family: Arial;"><b>Phone:{{ team.manager.phone_no }}</b></p>
