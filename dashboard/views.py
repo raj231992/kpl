@@ -2,11 +2,16 @@ from django.shortcuts import render,reverse
 from django.views import View
 from players.forms import PlayerForm
 from players.models import Player
+import datetime
 from django.http import HttpResponseRedirect
 # Create your views here.
 class Home(View):
     def get(self,request):
-        return render(request,"index.html",{})
+        t = datetime.datetime(2017, 2, 15, 15, 0, 0)
+        td = t-datetime.datetime.now()
+        time = int(td.total_seconds())
+        print time
+        return render(request,"index.html",{'time':time})
 
 class Rules(View):
     def get(self,request):

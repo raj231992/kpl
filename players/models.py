@@ -43,5 +43,7 @@ class Player(models.Model):
     kpl_exp = models.TextField(max_length=100,default='None')
     pool = models.CharField(max_length=1,choices=pool_opts,default='B')
     auction_status = models.CharField(choices=auction_opts,max_length=10,default='pending')
+    class Meta:
+        ordering = ['pool','name']
     def __str__(self):
         return str(self.name)

@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^start_auction/$', Start_Auction.as_view()),
     url(r'^skip_player/$', Skip_Player.as_view()),
     url(r'^sell_player/$', Sell_Player.as_view()),
-    url(r'^$', Auction.as_view()),
+    url(r'^$', Auction.as_view(),name='auctions'),
 ]

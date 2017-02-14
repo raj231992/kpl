@@ -25,7 +25,7 @@ SECRET_KEY = 'i9825%w(v(q^lqw594*ig(x8r7uxmv^ycc39-w2n#%oax$@@d5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.14.11.2','127.0.0.1', '10.129.3.38','ntp.cse.iitb.ac.in','www.cse.iitb.ac.in','10.14.11.1']
+ALLOWED_HOSTS = ['10.14.11.2','127.0.0.1', '10.129.3.38','ntp.cse.iitb.ac.in','www.cse.iitb.ac.in','10.14.11.1','192.168.0.105']
 
 
 # Application definition
