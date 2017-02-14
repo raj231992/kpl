@@ -123,12 +123,12 @@ class Unsold_Player_Data(APIView):
         return Response(data=player_obj.data,status=200)
 class Sold_Player_Data(APIView):
     def get(self,request):
-        sold_players = Sold_Player.objects.all().order_by('-id')
+        sold_players = Sold_Player.objects.all().exclude(player__gender='Female').order_by('-id')
         sold_player_obj = Sold_Player_Serializer(sold_players,many=True)
         return Response(data=sold_player_obj.data,status=200)
 class Top_Sold_Player_Data(APIView):
     def get(self,request):
-        top_sold_players = Sold_Player.objects.all().order_by('-price')[:8]
+        top_sold_players = Sold_Player.objects.all().exclude(player__gender='Female').order_by('-price')[:8]
         top_sold_player_obj = Sold_Player_Serializer(top_sold_players,many=True)
         return Response(data=top_sold_player_obj.data,status=200)
 class Refresh_Player_Data(APIView):
