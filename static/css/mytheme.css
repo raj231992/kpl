@@ -1322,6 +1322,7 @@ button {
   border-bottom-width: 0;
 }
 .team-match img{
-    width:40px;
-    height: 40px;
+    display:block;
+    margin:auto;
+
 }
