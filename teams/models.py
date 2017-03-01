@@ -18,6 +18,7 @@ class Team(models.Model):
     players_cost = models.IntegerField(default=0)
     manager_cost = models.IntegerField(default=0)
     money = models.IntegerField(default=3000)
+    alias = models.CharField(max_length=10,blank=True)
     def __str__(self):
         return str(self.name)
 

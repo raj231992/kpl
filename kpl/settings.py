@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'players',
     'teams',
     'auctions',
+    'matches',
     'rest_framework',
 ]
 

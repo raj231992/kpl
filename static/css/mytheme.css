@@ -1321,3 +1321,7 @@ button {
   float: left;
   border-bottom-width: 0;
 }
+.team-match img{
+    width:40px;
+    height: 40px;
+}

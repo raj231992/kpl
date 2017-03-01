@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <section id=organizers" style="background-color: white; ">
+        <div class="container">
+            <div class="row">
+                <br>
+                <br>
+                <div class="col-lg-12 text-center" style="border-bottom: thick solid black;">
+                    <h2 class="section-heading"><b>Match Schedule</b></h2>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                {% for match in matches %}
+                    <div class="col-sm-12" style="padding-top: 10px;padding-bottom: 10px;border-bottom: thick solid black;">
+                        <h3 class="section-heading text-center"><b>Match {{ match.match_number }}</b></h3>
+                        <h5 class="section-heading text-center"><b>{{ match.date }}</b></h5>
+                        <br>
+                        <div class="col-sm-offset-2 col-sm-3">
+                            <div class="team-match">
+                                <img src="{{ MEDIA_URL }}{{ match.team1.logo.url }}" style="width:250px;height: 250px;"
+                                     class="img-responsive img-circle" alt="" width="50px">
+                                <h3><a href="{% url 'teams:players' match.team1.id %}"><b>{{ match.team1.name }}</b></a></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-sm-2">
+                            <h3 style="padding-top: 80px;">VS</h3>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="team-match">
+                                <img src="{{ MEDIA_URL }}{{ match.team2.logo.url }}" style="width:250px;height: 250px;"
+                                     class="img-responsive img-circle" alt="">
+                                <h3><a href="{% url 'teams:players' match.team2.id %}"><b>{{ match.team2.name }}</b></a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock %}
