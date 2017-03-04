@@ -63,6 +63,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
         ">
         <ul class="nav navbar-nav navbar-right">
+            {% ifequal user 'raj' %}
+                <li>
+                <a style="color:black;" class="page-scroll" href="{% url 'match:new_match' %}">Scoring</a>
+            </li>
+            {% endifequal %}
             <li>
                 <a style="color:black;" class="page-scroll" href="{% url 'match:schedule' %}">Schedule</a>
             </li>

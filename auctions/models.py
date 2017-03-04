@@ -15,11 +15,13 @@ class Sold_Player(models.Model):
     player = models.ForeignKey(Player,on_delete=models.CASCADE)
     team = models.ForeignKey(Team,on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
-    runs = models.CharField(max_length=3,default=0)
-    wickets = models.CharField(max_length=2,default=0)
-    sixes = models.CharField(max_length=2,default=0)
-    fours = models.CharField(max_length=2,default=0)
-    catches = models.CharField(max_length=2,default=0)
+    runs = models.IntegerField(default=0)
+    wickets = models.IntegerField(default=0)
+    balls = models.IntegerField(default=0)
+    sixes = models.IntegerField(default=0)
+    fours = models.IntegerField(default=0)
+    catches = models.IntegerField(default=0)
+    runout = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.player)
