@@ -3,6 +3,7 @@ from matches.models import Match, Current_Match, Ball
 from teams.models import Team
 from auctions.models import Sold_Player
 from django.db.models import Q
+import traceback
 
 
 class New_Match_Form(forms.Form):
@@ -45,7 +46,7 @@ class First_Over_Form(forms.Form):
             self.fields['bowler'].queryset = Sold_Player.objects.filter(team=bowling_team).exclude(
                 player__gender='Female').order_by('player')
     except:
-        print "error"
+        traceback.print_exc()
 
 
 class New_Over_Form(forms.Form):
