@@ -91,7 +91,7 @@
 {#                            </ul>#}
                             <div class="rca-bowler-info">
                                 {% if bowler %}
-                                <span>{{ bowler.bowler }} </span><span class="rca-bolwing">{{ bowler.runs }}/{{ bowler.wickets }} in {{ bowler_over }}</span>
+                                <span>{{ bowler.bowler }} </span><span class="rca-bolwing">{{ bowler.runs|add:bowler.extras }}/{{ bowler.wickets }} in {{ bowler_over }}</span>
                                 {% else %}
                                 <span>Bowler </span><span class="rca-bolwing">0/0 in 0.0</span>
                                 {% endif %}

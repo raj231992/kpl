@@ -184,12 +184,12 @@ class New_Ball(View):
             female_player.retired = 'Yes'
             female_player.save()
         if cur_match.inning == cur_match.match.first_innings:
-            if balls == 48 or cur_match.inning.wickets == 7:
+            if balls == 48 or cur_match.inning.wickets == 6:
                 return HttpResponseRedirect(reverse('match:end_first_inning'))
         if cur_match.inning == cur_match.match.second_innings:
-            if balls == 48 or cur_match.inning.wickets == 7 or cur_match.match.second_innings.runs>cur_match.match.first_innings.runs:
+            if balls == 48 or cur_match.inning.wickets == 6 or cur_match.match.second_innings.runs>cur_match.match.first_innings.runs:
                 winner = None
-                if balls == 48 or cur_match.inning.wickets == 7:
+                if balls == 48 or cur_match.inning.wickets == 6:
                     winner = cur_match.inning.bowling
                 else:
                     winner = cur_match.inning.batting
@@ -221,21 +221,18 @@ class New_Ball(View):
             striker = Batting_Scorecard.objects.get(innings=cur_match.inning,batsman=cur_match.over.striker)
             non_striker = Batting_Scorecard.objects.get(innings=cur_match.inning,batsman=cur_match.over.non_striker)
             if striker.runs>30 :
-                if striker.retired == 'Yes':
+                if striker.retired == 'Yes' and striker.come_back == 'Yes':
                     striker.retired='No'
-                    striker.come_back='Yes'
                     striker.save()
                 if striker.come_back=='No':
                     return HttpResponseRedirect(reverse('match:retire_player'))
             if non_striker.runs > 30:
-                if non_striker.retired == 'Yes':
+                if non_striker.retired == 'Yes' and non_striker.come_back == 'Yes':
                     non_striker.retired = 'No'
-                    non_striker.come_back = 'Yes'
                     non_striker.save()
                 if non_striker.come_back == 'No':
                     return HttpResponseRedirect(reverse('match:retire_player'))
         if balls==24 and cur_match.over.striker.player.gender=='Male':
-
             return HttpResponseRedirect(reverse('match:female_over'))
         if balls % 6 == 0 and cur_match.over.over != int(balls / 6) + 1:
             cur_match = Current_Match.objects.all()[0]
@@ -256,12 +253,16 @@ class New_Ball(View):
         new_ball_form_obj.save()
         extra = new_ball_form_obj.extra
         runs = int(new_ball_form_obj.run)
+        bye = int(new_ball_form_obj.bye)
         overthrows = int(new_ball_form_obj.overthrow)
         wicket = new_ball_form_obj.wicket
         batsman = Batting_Scorecard.objects.get(innings=cur_innings, batsman=cur_over.striker)
         bowler = Bowling_Scorecard.objects.get(innings=cur_innings, bowler=cur_over.bowler)
         tot_runs = runs + overthrows
         tournament = Tournament_Stats.objects.all()[0]
+        if bye !=0:
+            cur_innings.runs += bye
+            cur_innings.extras += bye
         if tot_runs != 0:
             cur_innings.runs += tot_runs
             try:
@@ -275,7 +276,7 @@ class New_Ball(View):
                 batsman.batsman.runs += tot_runs
             bowler.runs += tot_runs
         if cur_over.super_over == 'Yes':
-            cur_innings.runs += tot_runs
+            cur_innings.runs += (tot_runs+bye)
 
         if extra != None:
             cur_innings.extras += 2
@@ -317,7 +318,7 @@ class New_Ball(View):
                     batsman.save()
                     batsman.batsman.save()
                 bowler.runs += tot_runs
-                cur_innings.runs += tot_runs
+                cur_innings.runs += (tot_runs+bye)
                 cur_innings.save()
             if tot_runs % 2 != 0:
                 cur_over.striker, cur_over.non_striker = cur_over.non_striker, cur_over.striker
@@ -404,7 +405,11 @@ class Bold_Wicket(View):
         bowler.bowler.wickets += 1
         bowler.save()
         bowler.bowler.save()
-        batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
+        try:
+            batting_scorecard = Batting_Scorecard.objects.get(batsman=next_batsman, innings=cur_inning)
+            batting_scorecard.come_back = 'Yes'
+        except:
+            batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
         batting_scorecard.save()
         return HttpResponseRedirect(reverse('match:new_ball'))
 
@@ -435,7 +440,11 @@ class Hit_Wicket(View):
         bowler.bowler.wickets += 1
         bowler.save()
         bowler.bowler.save()
-        batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
+        try:
+            batting_scorecard = Batting_Scorecard.objects.get(batsman=next_batsman, innings=cur_inning)
+            batting_scorecard.come_back = 'Yes'
+        except:
+            batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
         batting_scorecard.save()
         return HttpResponseRedirect(reverse('match:new_ball'))
 
@@ -470,7 +479,11 @@ class Caught_Wicket(View):
         bowler.bowler.save()
         caught_by.catches += 1
         caught_by.save()
-        batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
+        try:
+            batting_scorecard = Batting_Scorecard.objects.get(batsman=next_batsman, innings=cur_inning)
+            batting_scorecard.come_back = 'Yes'
+        except:
+            batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
         batting_scorecard.save()
         if striker == 'No':
             cur_over.striker, cur_over.non_striker = cur_over.non_striker, cur_over.striker
@@ -503,7 +516,11 @@ class Runout_Wicket(View):
         cur_inning.save()
         runout_by.runout += 1
         runout_by.save()
-        batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
+        try:
+            batting_scorecard = Batting_Scorecard.objects.get(batsman=next_batsman, innings=cur_inning)
+            batting_scorecard.come_back = 'Yes'
+        except:
+            batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
         batting_scorecard.save()
         if striker == 'No':
             cur_over.non_striker = next_batsman
@@ -543,7 +560,11 @@ class Stumped_Wicket(View):
         cur_over.save()
         cur_inning.wickets += 1
         cur_inning.save()
-        batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
+        try:
+            batting_scorecard = Batting_Scorecard.objects.get(batsman=next_batsman, innings=cur_inning)
+            batting_scorecard.come_back = 'Yes'
+        except:
+            batting_scorecard = Batting_Scorecard(batsman=next_batsman, innings=cur_inning)
         batting_scorecard.save()
         return HttpResponseRedirect(reverse('match:new_ball'))
 

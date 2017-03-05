@@ -57,6 +57,9 @@ class Wicket(models.Model):
     player1 = models.ForeignKey(Sold_Player,blank=True,related_name='wicket_player1')
     player2 = models.ForeignKey(Sold_Player,blank=True,related_name='wicket_player2',null=True)
 
+    def __str__(self):
+        return str(self.id)
+
 class Over(models.Model):
     superover_choice = (
         ('Yes','Yes'),
@@ -96,6 +99,7 @@ class Ball(models.Model):
     over = models.ForeignKey(Over,related_name='ball_over',blank=True,null=True)
     run = models.CharField(choices=runs_choice,max_length=1,default='0')
     overthrow = models.CharField(choices=runs_choice,max_length=1,default='0')
+    bye = models.CharField(choices=runs_choice,max_length=1,default='0')
     extra = models.ForeignKey(Extra,related_name='ball_extra',blank=True,null=True)
     wicket = models.ForeignKey(Wicket_Type,related_name='wicket_extra',blank=True,null=True)
     wicket_details = models.ForeignKey(Wicket,related_name='wicket_extra',blank=True,null=True)

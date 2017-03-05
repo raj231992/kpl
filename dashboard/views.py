@@ -28,6 +28,7 @@ class Home(View):
         try:
             other_inning = Innings.objects.filter(batting=current_match.inning.bowling,
                                                   bowling=current_match.inning.batting)
+            print other_inning
             other_over = ""
 
             if len(other_inning)!=0:
