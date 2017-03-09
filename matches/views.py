@@ -320,7 +320,7 @@ class New_Ball(View):
                 bowler.runs += tot_runs
                 cur_innings.runs += (tot_runs+bye)
                 cur_innings.save()
-            if tot_runs % 2 != 0:
+            if tot_runs % 2 != 0 or bye % 2 != 0:
                 cur_over.striker, cur_over.non_striker = cur_over.non_striker, cur_over.striker
                 cur_over.save()
             if wicket:
